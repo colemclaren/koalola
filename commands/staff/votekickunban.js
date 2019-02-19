@@ -33,7 +33,7 @@ module.exports = class Ban extends commando.Command {
     }
 
     async run(msg, args) {
-        if(!args.user || !args.reason) return;
+        if(!args.user) return;
 
         const rank = helper.discordRank(msg.member.highestRole.name);
         await helper.checkTargetAndRunCommand(args.user, this.client, [
