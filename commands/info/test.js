@@ -7,7 +7,7 @@ module.exports = class TestCmd extends commando.Command {
 			name       : 'test',
 			group      : 'info',
 			memberName : 'test',
-			description: 'qwertyuiop',
+			description: 'qwertyuiopp',
 			ownerOnly: true
 		 });
 	}
