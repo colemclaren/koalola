@@ -8,7 +8,7 @@ module.exports = class TestCmd extends commando.Command {
 			group      : 'info',
 			memberName : 'test',
 			description: 'qwertyuiopp',
-			ownerOnly: true
+			ownerOnly  : true
 		 });
 	}
 
@@ -16,3 +16,4 @@ module.exports = class TestCmd extends commando.Command {
 		msg.chooseServer();
 	}
 };
+
