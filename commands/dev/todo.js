@@ -6,7 +6,7 @@ module.exports = class ToDoCommand extends commando.Command {
 	constructor(client) {
 		super(client, {
 			name: 'todo',
-			group: 'user',
+			group: 'dev',
 			memberName: 'todo',
 			description: 'Gain access to the developer to-do list channels.',
 			guildOnly: true,
