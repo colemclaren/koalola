@@ -9,7 +9,7 @@ module.exports = {
 	respond: function (msg) {
 		let res = math.eval(msg.content);
 
-		if(module.exports.shouldSendResponse(msg, res)) msg.channel.send(math.format(res, {precision: 14}));
+		if(module.exports.shouldSendResponse(msg, res)) msg.channel.send(math.format(res, {notation: 'fixed', precision: 14}));
 	},
 
 	shouldSendResponse: function (msg, res) {
