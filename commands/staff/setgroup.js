@@ -18,16 +18,12 @@ module.exports = class SetGroup extends commando.Command {
 				parse: str => {
 					return helper.parsePlayer(str);
 				}
-			},
-				{
-					key: 'rank',
-					label: 'Rank',
-					prompt: 'Which group are you setting them to?\n```\ncommunitylead\nheadadmin\nsenioradmin\nadmin\nmoderator\ntrialstaff\ncredibleclub\nvip\nuser```',
-					type: 'string',
-					validate: str => {
-						return helper.getRanks().hasOwnProperty(str) ? true : 'Which group are you setting them to?\n```\ncommunitylead\nheadadmin\nsenioradmin\nadmin\nmoderator\ntrialstaff\ncredibleclub\nvip\nuser```';
-					}
-				}],
+			},{
+				key: 'rank',
+				label: 'Rank',
+				prompt: 'Which group are you setting them to?\n```\ncommunitylead\nheadadmin\nsenioradmin\nadmin\nmoderator\ntrialstaff\ncredibleclub\nvip\nuser```',
+				type: 'string'
+			}],
 			weightPermissions: 80,
 			examples: [
 				/* Command Emoji */ ':hatching_chick:',
