@@ -22,7 +22,7 @@ module.exports = {
 			.setTitle(`Compensation ID: ${res.ID}`)
 			.setURL(res.link)
 			.setColor('3399FF')
-			.setDescription(`${helper.randomValue(helper.emojis.gamers) + helper.randomValue(helper.emojis.skins)} ${user[0].name} \`${res.steamid}\``)
+			.setDescription(`${helper.randomValue(helper.emojis.gamers) + helper.randomValue(helper.emojis.skins)} ${user[0].name || "Invalid Player"} \`${res.steamid}\``)
 			.setTimestamp(new Date(res.time * 1000))
 			.setThumbnail(user[0].avatar_url || "https://cdn.moat.gg/f/579e883ca47f898ce530b7e49c29921e.jpg")
 			.setFooter(res.admin, avatarStaff[0].avatar_url || "https://cdn.moat.gg/f/579e883ca47f898ce530b7e49c29921e.jpg");
