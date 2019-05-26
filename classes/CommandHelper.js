@@ -1,5 +1,6 @@
 const steam = require('steamid');
 const fetch = require('node-fetch');
+var moment = require('moment');
 
 class CommandHelper {
 	constructor() {
@@ -7,7 +8,7 @@ class CommandHelper {
 			23: 'VIP',
 			3: 'Member',
 			11: 'Administrator',
-			8: 'Credible Club',
+			8: 'Cool Cuties',
 			10: 'Moderator',
 			9: 'Trial Staff',
 			12: 'Senior Administrator',
@@ -22,7 +23,7 @@ class CommandHelper {
 
 		// List of roles ID's to remove when members verify, are promoted, etc (so they dont stack roles)
 		this.mainStaffIDs = [
-			'256328950857334784', // Credible Club
+			'256328950857334784', // Cool Cuties
 			'256328853763522560', // Trial Staff
 			'256328730115309568', // Moderator
 			'256328565979742209', // Administrator
@@ -31,7 +32,7 @@ class CommandHelper {
 
 		// List of roles ID's to remove when members verify, are promoted, etc (so they dont stack roles)
 		this.corpStaffIDs = [
-			'485826602970644500', // Credible Club
+			'485826602970644500', // Cool Cuties
 			'474476050362138625', // Trial Staff
 			'474475922284871683', // Moderator
 			'474475874759213076', // Administrator
@@ -58,6 +59,7 @@ class CommandHelper {
 			user: 'User',
 			member: 'Member',
 			vip: 'VIP',
+			coolclub: 'Cool Cutie',
 			trialstaff: 'Trial Staff',
 			moderator: 'Moderator',
 			admin: 'Administrator',
@@ -71,7 +73,7 @@ class CommandHelper {
 			'Member': 'member',
 			'VIP': 'vip',
 			'MVP': 'mvp',
-			'Credible Club': 'credibleclub',
+			'Cool Cuties': 'coolclub',
 			'Trial Staff': 'trialstaff',
 			'Moderator': 'moderator',
 			'Administrator': 'admin',
@@ -94,7 +96,7 @@ class CommandHelper {
 			'Member': 1,
 			'VIP': 10,
 			'MVP': 20,
-			'Credible Club': 30,
+			'Cool Cuties': 30,
 			'Trial Staff': 40,
 			'Moderator': 50,
 			'Administrator': 60,
@@ -219,9 +221,17 @@ class CommandHelper {
 			.replace(/^STEAM_[0-5]/, 'STEAM_0')
 			.replace('\\', ''); //mobile edge case for when they try to escape the thumbs up
 
-		return pl.match(/^STEAM_[0-5]:[01]:\d+$/) ? this.convertTo64(pl) : str;
+		return str.match(/^STEAM_[0-5]:[01]:\d+$/) ? this.convertTo64(pl) : str;
 	}
 
+	parseWorkshop(str) {
+		return str.match(/([0-9]{8,})/);
+	}
+
+	parseTime(unix) {
+		return moment.unix(unix).format('MMM DD, YYYY @ h:mmA'); 
+	}
+ 
 	//this whole thing seems like a bad implementation of async programming but idk how to make it better
 	async canRunCommand(msg, commandName) {
 		const rank = this.discordRank(msg.member.highestRole.name);

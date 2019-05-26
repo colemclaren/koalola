@@ -78,9 +78,13 @@ client.on('commandRun', (command, promise, message) => {
 });
 
 client.on('messageDelete', msg => {
-	if(commandMessages[msg.id]) {
+	if(commandMessages[msg.id] && commandMessages[msg.id].responses) {
 		for(var test in commandMessages[msg.id].responses) {
-			commandMessages[msg.id].responses[test][0].delete();
+			try {
+				commandMessages[msg.id].responses[test][0].delete();
+			} catch {
+				console.log('error deleting');
+			}
 		}
 	}
 });
