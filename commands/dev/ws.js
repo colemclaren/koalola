@@ -235,7 +235,7 @@ module.exports = class MapCommand extends commando.Command {
 													msg.reply(`Okay, deploying ${mapname} to all ${(btn === mc)?'minecraft':'regular'} map servers now.`)
 
 													var deploy_start = new Date();
-													shell.exec(`sh ${dir}../${type}.sh 'maps/${mapname}.bsp' '${dir + luafile}'`, function(code, stdout, stderr) {
+													shell.exec(`sh ${dir}../${type}.sh 'maps/${mapname}.bsp' '${luafile}'`, function(code, stdout, stderr) {
 														if (stdout.match('Deployment Finished done')) {
 															var deploy_end = new Date() - deploy_start;
 															msg.reply(`Finished deploying to ${(btn === mc)?'all 7 mc':'all 17 regular'} servers. (Took ${Math.floor(deploy_end/1000)} secs)`)
