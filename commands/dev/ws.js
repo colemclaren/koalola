@@ -230,6 +230,8 @@ module.exports = class MapCommand extends commando.Command {
 												let dlfile = `if (game.GetMap() == '${mapname}') then resource.AddWorkshop(${info.publishedfileid}) end`;
 
 												fs.outputFile(dir + luafile, dlfile, function(err) {
+													if (err)
+														console.log(err.toString());
 													shell.rm('-rf', `/var/www/lola/addons/${info.publishedfileid}/`);
 
 													msg.reply(`Okay, deploying ${mapname} to all ${(btn === mc)?'minecraft':'regular'} map servers now.`)
