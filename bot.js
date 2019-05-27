@@ -82,7 +82,7 @@ client.on('messageDelete', msg => {
 		for(var test in commandMessages[msg.id].responses) {
 			try {
 				commandMessages[msg.id].responses[test][0].delete();
-			} catch {
+			} catch(e) {
 				console.log('error deleting');
 			}
 		}
