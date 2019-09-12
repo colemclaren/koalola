@@ -44,6 +44,6 @@ module.exports = class Talk extends commando.Command {
 			setTimeout(function() {
 				msg.channel.stopTyping(true);
 			}, 1000, 'die');
-		}, Math.random() * 15000, 'walk');
+		}, Math.random() * 15000, 'talk');
 	}
 };
