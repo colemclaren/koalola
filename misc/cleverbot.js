@@ -1,35 +1,21 @@
-let convos = [];
-
 module.exports = {
 	respond: function (msg) {
 		msg.channel.startTyping();
 
-		const cleverbotAsPromised = require('cleverbot-as-promised');
-		const cleverbot = new cleverbotAsPromised('CC2py1x7USMvycwPdHk9ee5owBw');
-		const id = msg.author.id;
-		const date = new Date();
+		fs.readFile('/var/www/lola/root-moviereviews.txt', {'flag': 'r'}, function(err, data) {
+			if (err) throw err;
 
-		convos[id] = {
-			last: date,
-			cid: 0
-		};
+			if (data) {
+				let quotes = data.split('\n');
+				let rng = Math.floor(math.random() * quotes.length);
 
-		let newMsg = msg.content.toLowerCase().replace('lola', 'cleverbot').replace('<@!462414378352771123>', 'cleverbot');
-		let input = {input: newMsg, tweak1: 0, tweak2: 0, tweak3: 0};
-		convos[id].last = date;
-
-		input.cd = convos[id].cs;
-		cleverbot.getReply(input).then(res => {
-
-			msg.reply(res.output.replace('cleverbot', 'lola').replace('Cleverbot', 'Lola'));
-			convos[id].cid = res.cs;
+				msg.channel.send(quotes[rng]);
+				msg.channel.stopTyping(true);
+			}
 		});
-
-		msg.channel.stopTyping(true);
 	},
 	
 	shouldRespond: function (msg, client) {
-		//return false; //todo remove
 		if(msg.author.bot) return false;
 
 		let content = msg.content.toLowerCase();
