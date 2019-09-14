@@ -37,6 +37,8 @@ module.exports = class Walk extends commando.Command {
 		let rng = Math.floor(Math.random() * quotes.length);
 
 		setTimeout(function() {
+			msg.delete();
+
 			msg.channel.send(quotes[rng]);
 
 			setTimeout(function() {
