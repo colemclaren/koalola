@@ -21,7 +21,7 @@ module.exports = class SetGroup extends commando.Command {
 			},{
 				key: 'rank',
 				label: 'Rank',
-				prompt: 'Which group are you setting them to?\n```\ncommunitylead\nheadadmin\nsenioradmin\nadmin\nmoderator\ntrialstaff\ncredibleclub\nvip\nuser```',
+				prompt: 'Which group are you setting them to?\n```\ncommunitylead\nheadadmin\nsenioradmin\nadmin\nmoderator\ntrialstaff\nhoodninja\nstarplayer\nnba\nuser```',
 				type: 'string'
 			}],
 			weightPermissions: 80,
