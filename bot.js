@@ -61,8 +61,8 @@ client.on('message', async msg => {
 		}
 	}
 
-	if(cleverbot.shouldRespond(msg, client))
-		return cleverbot.respond(msg);
+	// if(cleverbot.shouldRespond(msg, client))
+	// 	return cleverbot.respond(msg);
 
 	try {
 		if(math.shouldRespond(msg))
