@@ -16,7 +16,7 @@ const trello = require('./misc/trello');
 
 const client = new Commando.Client({
 	commandPrefix: '!',
-	owner: ['207612500450082816'], //motato#0001
+	owner: ['448587723952095242'],
 	unknownCommandResponse: false,
 	disableEveryone: true
 });

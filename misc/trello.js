@@ -34,7 +34,7 @@ var conf = {
 	pollInterval   : 10000,
 	enabledEvents	 : [],
 	userIDs : { // https://api.trello.com/1/members/UserNameHere
-		  '591b37fc0c88e0bab9918c98' : ['207612500450082816', 'Motato'], // motato
+		  '591b37fc0c88e0bab9918c98' : ['448587723952095242', 'Motato'], // motato
 		  '56f034a2c8f5522f3cde24a3' : ['411323213910376449', 'Footises'], // footsies
 		  '576b317b8c194b63d03eb3fc' : ['150809682318065664', 'Meepen'], // meepen
 		  '55d1411a30b9185623bbfa6f' : ['135912347389788160', 'Velkon'], // velkongmod
