@@ -18,7 +18,7 @@ module.exports = class Walk extends commando.Command {
 				type: 'member',
 				default: ''
 			}],
-			weightPermissions: 40,
+			weightPermissions: 0,
 			examples: [
 				/* Command Emoji */ ':see_no_evil:',
 				/* Command Image */ ''

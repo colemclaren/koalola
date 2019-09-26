@@ -5,7 +5,7 @@ var moment = require('moment');
 class CommandHelper {
 	constructor() {
 		this.forumGroup = {
-			23: 'NBA',
+			23: 'NTA',
 			3: 'Member',
 			11: 'Administrator',
 			8: 'Cool Cuties',
@@ -58,7 +58,7 @@ class CommandHelper {
 		this.prettyRank = {
 			user: 'User',
 			member: 'Member',
-			nba: 'NBA',
+			nta: 'NTA',
 			starplayer: 'Star Player',
 			hoodninja: 'Hood Ninja',
 			trialstaff: 'Trial Staff',
@@ -72,7 +72,7 @@ class CommandHelper {
 		this.discordRanks = {
 			'@everyone': 'user',
 			'Member': 'member',
-			'NBA': 'nba',
+			'NTA': 'nta',
 			'Star Player': 'starplayer',
 			'Hood Ninja': 'hoodninja',
 			'Trial Staff': 'trialstaff',
@@ -95,7 +95,7 @@ class CommandHelper {
 			'Bad Place Enthusiast': 0,
 			'User': 0,
 			'Member': 1,
-			'NBA': 10,
+			'NTA': 10,
 			'Star Player': 20,
 			'Hood Ninja': 30,
 			'Trial Staff': 40,
