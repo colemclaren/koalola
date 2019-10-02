@@ -8,7 +8,7 @@ module.exports = class Comp extends commando.Command {
 			aliases: ['compensate', 'c'],
 			memberName: 'comp',
 			description: 'Respond to a compensation ticket.',
-			ownerOnly: false,
+			ownerOnly: true,
 			args: [{
 				key: 'id',
 				label: 'CompID',
